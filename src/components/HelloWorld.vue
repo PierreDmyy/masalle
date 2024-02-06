@@ -23,11 +23,21 @@ export default {
       // Mapping des noms de salle aux couleurs correspondantes
       const colorMap = {
         'Salle A': '#ffcccc', 
-        'Salle Remparts (Jaune)': '#ffff38', 
-        'Salle Cordelier (Vert pâle)': '#8fffbf', 
+        'Salle Remparts (Jaune)': 'rgba(250, 241, 29, 0.9)', 
+        'Salle Cordelier (Vert pâle)': '#99cc99', 
         'Salle Chatelaine (bleue)': '#3240a8' 
       };
       return colorMap[res_name] || '#D9FDFD'; // Couleur par défaut si aucun mapping trouvé
+    },
+    getTextColor(res_name) {
+      // Mapping des noms de salle aux couleurs correspondantes
+      const colorMap = {
+        'Salle A': '#ffcccc', 
+        'Salle Remparts (Jaune)': '#003681', 
+        'Salle Cordelier (Vert pâle)': '#003681', 
+        'Salle Chatelaine (bleue)': '#ffff' 
+      };
+      return colorMap[res_name] || '#003681'; // Couleur par défaut si aucun mapping trouvé
     }
   },
 };
@@ -39,10 +49,10 @@ export default {
     <!-- Body -->
     <main>
       <div class="grid-container">
-        <div class="card" v-for="room in inforooms" :key="room.id" :style="{ backgroundColor: getCardBackgroundColor(room.res_name) }">
+        <div class="card" v-for="room in inforooms" :key="room.id" :style="{ backgroundColor: getCardBackgroundColor(room.res_name), color: getTextColor(room.res_name) }">
           <p class="roomP">{{ room.description }} </p>
           <p class="roomP">{{ room.res_name }}</p>
-          <p>Avec : {{ room.full_name }}</p>
+          <p class="Person">Avec : {{ room.full_name }}</p>
         </div>
       </div>
     </main>
@@ -50,6 +60,8 @@ export default {
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 cartes par ligne */
@@ -85,6 +97,7 @@ main {
 }
 
 h1 {
+  font-family: 'Poppins', sans-serif;
   color: #003482;
   font-weight: bold;
   font-size: 40px;
@@ -101,7 +114,15 @@ p {
 }
 
 .roomP {
-  color: #040404;
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  text-align: center;
+  font-weight: 900;
+  font-size: 25px;
+}
+.Person{
+  align-items: center;
+  text-align: center;
   font-weight: 900;
   font-size: 20px;
 }
@@ -110,8 +131,10 @@ p {
   width: 350px;
   height: auto;
   color: #003482;
-  border: 7px solid;
-  padding: 20px;
+  border: solid 5px #250f0f36;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border-radius: 3%;
+ padding: 20px;
   margin: -3px;
 }
 
