@@ -62,10 +62,17 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
+main {
+  display: flex;
+  justify-content: center;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cartes par ligne */
-  grid-gap: 20px; /* Espacement entre les cartes */
+  grid-template-columns: repeat(5, 1fr); /* 4 cartes par ligne */
+  grid-gap: 15px; /* Espacement entre les cartes */
+  margin-top: -150px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* CSS pour le menu */
@@ -96,6 +103,7 @@ main {
   padding: 0;
 }
 
+
 h1 {
   font-family: 'Poppins', sans-serif;
   color: #003482;
@@ -123,12 +131,12 @@ p {
 .Person{
   align-items: center;
   text-align: center;
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .card {
-  width: 350px;
+  width: 270px;
   height: auto;
   color: #003482;
   border: solid 5px #250f0f36;
