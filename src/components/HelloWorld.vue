@@ -22,10 +22,10 @@ export default {
     getCardBackgroundColor(res_name) {
       // Mapping des noms de salle aux couleurs correspondantes
       const colorMap = {
-        'Salle A': '#ffcccc', // Exemple de couleur pour Salle A
-        'Salle B': '#ccffcc', // Exemple de couleur pour Salle B
-        'Salle Cordelier (Vert pâle)': '#8fffbf', // Exemple de couleur pour Salle C
-        'Salle Chatelaine (bleue)': '#3240a8' // Exemple de couleur pour Salle Chatelaine (bleue)
+        'Salle A': '#ffcccc', 
+        'Salle Remparts (Jaune)': '#ffff38', 
+        'Salle Cordelier (Vert pâle)': '#8fffbf', 
+        'Salle Chatelaine (bleue)': '#3240a8' 
       };
       return colorMap[res_name] || '#D9FDFD'; // Couleur par défaut si aucun mapping trouvé
     }
@@ -101,7 +101,7 @@ p {
 }
 
 .roomP {
-  color: #ED7412;
+  color: #040404;
   font-weight: 900;
   font-size: 20px;
 }
