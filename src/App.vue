@@ -54,13 +54,13 @@ header {
   font-family: 'Poppins', sans-serif;
   margin: 20px;
   font-size: 25px;
-  color: blue;
+  color: #023483;
 }
 .date{
   font-family: 'Poppins', sans-serif;
   margin: 0;
   font-size: 25px;
-  color: blue;
+  color: #023483;
 }
 
 nav a.router-link-exact-active {

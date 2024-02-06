@@ -133,7 +133,7 @@ p {
   color: #003482;
   border: solid 5px #250f0f36;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  border-radius: 3%;
+
  padding: 20px;
   margin: -3px;
 }
