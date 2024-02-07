@@ -136,7 +136,7 @@ p {
 }
 
 .card {
-  width: 270px;
+  width: 200px;
   height: auto;
   color: #003482;
   border: solid 5px #250f0f36;
