@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 
 const currentTime = ref('');
 const currentDate = ref('');
+
+const reloadPage = () => {
+  setInterval(() => {
+    location.reload();
+  }, 1 * 60 * 1000);
+}
 
 
 // Mettre à jour l'heure actuelle
@@ -13,6 +18,12 @@ setInterval(() => {
   currentDate.value = now.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   currentTime.value = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }, 1000);
+
+
+onMounted(() => {
+  reloadPage(); // Recharger la page au montage du composant
+});
+
 </script>
 
 <template>
