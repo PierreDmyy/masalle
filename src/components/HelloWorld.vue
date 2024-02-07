@@ -108,7 +108,7 @@ h1 {
   font-family: 'Poppins', sans-serif;
   color: #003482;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 0px;
 }
@@ -126,7 +126,7 @@ p {
   align-items: center;
   text-align: center;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 15px;
 }
 .Person{
   align-items: center;
@@ -136,7 +136,7 @@ p {
 }
 
 .card {
-  width: 200px;
+  width: 270px;
   height: auto;
   color: #003482;
   border: solid 5px #250f0f36;
