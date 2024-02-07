@@ -126,7 +126,7 @@ p {
   align-items: center;
   text-align: center;
   font-weight: 900;
-  font-size: 15px;
+  font-size: 25px;
 }
 .Person{
   align-items: center;
