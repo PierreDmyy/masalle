@@ -68,7 +68,7 @@ main {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 4 cartes par ligne */
+  grid-template-columns: repeat(4, 1fr); /* 4 cartes par ligne */
   grid-gap: 15px; /* Espacement entre les cartes */
   margin-top: -150px;
   justify-content: center;
@@ -108,7 +108,7 @@ h1 {
   font-family: 'Poppins', sans-serif;
   color: #003482;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 0px;
 }
