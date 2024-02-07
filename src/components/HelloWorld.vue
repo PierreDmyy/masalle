@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import { format } from 'date-fns';
 
 export default {
   data() {
@@ -22,7 +23,7 @@ export default {
     getCardBackgroundColor(res_name) {
       // Mapping des noms de salle aux couleurs correspondantes
       const colorMap = {
-        'Salle A': '#ffcccc', 
+        'Salle Parvis (verte)': '#008000', 
         'Salle Remparts (Jaune)': 'rgba(250, 241, 29, 0.9)', 
         'Salle Cordelier (Vert pâle)': '#99cc99', 
         'Salle Chatelaine (bleue)': '#3240a8' 
@@ -32,15 +33,24 @@ export default {
     getTextColor(res_name) {
       // Mapping des noms de salle aux couleurs correspondantes
       const colorMap = {
-        'Salle A': '#ffcccc', 
+        'Salle Parvis (verte)': '#ffff', 
         'Salle Remparts (Jaune)': '#003681', 
         'Salle Cordelier (Vert pâle)': '#003681', 
         'Salle Chatelaine (bleue)': '#ffff' 
       };
       return colorMap[res_name] || '#003681'; // Couleur par défaut si aucun mapping trouvé
-    }
+    },
+    formatDateTime(dateTimeString) {
+      const date = new Date(dateTimeString);
+      const formattedTime = `${padWithZero(date.getHours())}:${padWithZero(date.getMinutes())}`;
+      return formattedTime;
+    },
   },
+  
 };
+function padWithZero(num) {
+  return num.toString().padStart(2, '0');
+}
 </script>
 
 
@@ -52,7 +62,8 @@ export default {
         <div class="card" v-for="room in inforooms" :key="room.id" :style="{ backgroundColor: getCardBackgroundColor(room.res_name), color: getTextColor(room.res_name) }">
           <p class="roomP">{{ room.description }} </p>
           <p class="roomP">{{ room.res_name }}</p>
-          <p class="Person">Avec : {{ room.full_name }}</p>
+          <p class="person">Avec : {{ room.full_name }}</p>
+          <p class="time">De :  {{ formatDateTime(room.start) }} <br> À : {{ formatDateTime(room.finish) }}</p> 
         </div>
       </div>
     </main>
@@ -128,10 +139,16 @@ p {
   font-weight: 900;
   font-size: 15px;
 }
-.Person{
+.person{
   align-items: center;
   text-align: center;
   font-weight: 500;
+  font-size: 15px;
+}
+.time{
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
   font-size: 15px;
 }
 
