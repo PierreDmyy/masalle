@@ -70,7 +70,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 cartes par ligne */
   grid-gap: 15px; /* Espacement entre les cartes */
-  margin-top: -150px;
+  margin-top: -30px;
   justify-content: center;
   flex-wrap: wrap;
 }
