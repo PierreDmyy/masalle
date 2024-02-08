@@ -63,7 +63,7 @@ function padWithZero(num) {
           <p class="roomP">{{ room.description }} </p>
           <p class="roomP">{{ room.res_name }}</p>
           <p class="person">Avec : {{ room.full_name }}</p>
-          <p class="time">De :  {{ formatDateTime(room.start) }} <br> À : {{ formatDateTime(room.finish) }}</p> 
+          <p class="time">De :  {{ formatDateTime(room.start) }} - À : {{ formatDateTime(room.finish) }}</p> 
         </div>
       </div>
     </main>
