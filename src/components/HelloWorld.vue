@@ -2,7 +2,6 @@
   <div>
     <!-- Affichage des salles du matin si l'heure est entre 8h30 et 12h00 -->
     <div v-if="isMorning">
-      <h2 class="titleRoom">Votre salle pour ce matin : </h2>
       <div class="grid-container">
         <div class="card" v-for="room in morningRooms" :key="room.id" :style="{ backgroundColor: getCardBackgroundColor(room.res_name), color: getTextColor(room.res_name) }">
           <p class="roomP">{{ room.description }} </p>
@@ -15,7 +14,6 @@
 
     <!-- Affichage des salles de l'après-midi si l'heure est entre 13h25 et 16h30 -->
     <div v-else-if="isAfternoon">
-      <h2 class="titleRoom">Votre salle pour cet après-midi :</h2>
       <div class="grid-container">
         <div class="card" v-for="room in afternoonRooms" :key="room.id" :style="{ backgroundColor: getCardBackgroundColor(room.res_name), color: getTextColor(room.res_name) }">
           <p class="roomP">{{ room.description }} </p>
