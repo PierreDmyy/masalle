@@ -46,14 +46,14 @@ export default {
     // Vérifie si l'heure actuelle est entre 8h30 et 12h00
     isMorning() {
       const now = new Date();
-      const morningStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 30, 0);
+      const morningStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 15, 0);
       const morningEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0);
       return now >= morningStart && now < morningEnd;
     },
     // Vérifie si l'heure actuelle est entre 13h25 et 16h30
     isAfternoon() {
       const now = new Date();
-      const afternoonStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 13, 20, 0);
+      const afternoonStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 13, 15, 0);
       const afternoonEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 30, 0);
       return now >= afternoonStart && now < afternoonEnd;
     },
